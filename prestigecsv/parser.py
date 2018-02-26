@@ -41,7 +41,7 @@ def iter_csv(csv_list):
                 # Ignore empty fields
                 data_line = list(filter(lambda elm: elm != '', row))
                 # Replace commas and convert String
-                data.append((str.join('|', data_line), fl))
+                data.append((str.join(' | ', data_line), fl))
                 count += 1
                 # Reset Inserting every 100 data inserting
                 if count % BATCH_SIZE == 0:
