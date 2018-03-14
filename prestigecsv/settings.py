@@ -4,19 +4,19 @@ from prestigecsv.config import config, logger
 
 def db_insert(sql_vals):
     """
-    Connecting to the PostgreSQL database server
+    Connecting to the MySQL database server
     """
     conn = None
     try:
-        # connect to the PostgreSQL server
-        logger.debug("Connecting to the PostgreSQL database...")
+        # connect to the MySQL server
+        logger.debug("Connecting to the MySQL database...")
         conn = db_connect()
         # create a cursor
         cur = conn.cursor()
         # execute a statement
         sql = 'INSERT INTO prop_land (line, file_name) VALUES (%s, %s)'
         cur.executemany(sql, sql_vals)
-        # close the communication with the PostgreSQL
+        # close the communication with the MySQL
         conn.commit()
         logger.debug('Data inserted in DB...')
         cur.close()

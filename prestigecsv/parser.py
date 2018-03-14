@@ -3,6 +3,7 @@ import sys
 import os
 
 from glob import glob
+from os.path import basename
 
 from prestigecsv.config import BATCH_SIZE, logger, LOG
 from prestigecsv.settings import db_insert, db_create
@@ -16,7 +17,7 @@ def main(cmd):
     """
     print(cmd)
     if len(cmd) == 2 and os.path.isdir(cmd[1]):
-        xpath = glob(cmd[1] + '*.csv')
+        xpath = glob(cmd[1] + '*.csv', recursive=True)
         if len(xpath) == 0:
             logger.debug('No CSV files found...')
         else:

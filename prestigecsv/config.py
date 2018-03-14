@@ -21,7 +21,7 @@ def config(filename='database.ini', section='mysql'):
     # read config file
     parser.read(filename)
 
-    # get section, default to postgresql
+    # get section, default to mysql
     db = {}
     if parser.has_section(section):
         params = parser.items(section)
