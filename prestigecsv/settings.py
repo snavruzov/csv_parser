@@ -35,7 +35,7 @@ def db_create():
     """
     conn = None
     try:
-        # connect to the PostgreSQL server
+        # connect to the MySQL server
         conn = db_connect()
         # create a cursor
         cur = conn.cursor()
@@ -58,12 +58,12 @@ def db_create():
 
 def db_connect():
     """
-    Connecting to the PostgreSQL database server
+    Connecting to the MySQL database server
     """
     # read connection parameters
     params = config()
-    # connect to the PostgreSQL server
-    logger.debug("Connecting to the PostgreSQL database...")
+    # connect to the MySQL server
+    logger.debug("Connecting to the MySQL database...")
     conn = pymysql.connect(**params)
 
     return conn
