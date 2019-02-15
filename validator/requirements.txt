@@ -1,2 +1,2 @@
-pandas=0.24.1
-dnspython=1.16.0
+pandas==0.24.1
+dnspython==1.16.0
